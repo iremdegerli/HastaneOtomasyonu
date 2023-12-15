@@ -10,20 +10,20 @@ namespace HastaneOtomasyonu.Models
         
        public int DoktorlarId { get; set; }
        
-        [Required(ErrorMessage ="İsim boş olmaz")]
+        [Required(ErrorMessage ="Doktor ismi boş olamaz")]
         [Display(Name ="Doktorİsmi")]
         public string? DoktorlarAd {  get; set; }
         
-        [Required(ErrorMessage = "Soayd boş olmaz")]
+        [Required(ErrorMessage = "Doktor soyadı boş olamaz")]
         [Display(Name = "DoktorSoyad")]
         public string? DoktorlarSoyad { get; set; }
        
-        [Required(ErrorMessage = "Mail boş olmaz")]
+        [Required(ErrorMessage = "Doktor maili boş olamaz")]
         [Display(Name = "DoktorMail")]
         [DataType(DataType.EmailAddress)]
         public string? DoktorlarMail { get; set; }
        
-        [Required(ErrorMessage = "Bolum boş olmaz")]
+        [Required(ErrorMessage = "Doktor alanı boş olamaz")]
         [Display(Name = "DoktorBolum")]
         public string? DoktorlarBolum { get; set; }
     }

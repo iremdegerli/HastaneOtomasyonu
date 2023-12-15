@@ -9,29 +9,30 @@ namespace HastaneOtomasyonu.Models
         [Key]
         public int Tc{ get; set; }
        
-        [Required(ErrorMessage = "İsim boş olmaz")]
+        [Required(ErrorMessage = "Hasta ismi boş olamaz")]
         [Display(Name = "Hastaİsmi")]
         public string? HastalarAd { get; set; }
        
-        [Required(ErrorMessage = "soyad boş olmaz")]
+        [Required(ErrorMessage = "Hasta soyismi boş olamaz")]
         [Display(Name = "HastaSoyadı")]
         public string? HastalarSoyad { get; set; }
-        [Required(ErrorMessage = "telefon boş olmaz")]
+       
+        [Required(ErrorMessage = "Hasta telefonu boş olamaz")]
         [Display(Name = "HastaTelNo")]
         public string? HastalarTelNo{ get; set; }
-        [Required(ErrorMessage = "DogumTarihi boş olmaz")]
-        
+       
+        [Required(ErrorMessage = "Hasta doğum tarihi boş olamaz")]
         [Display(Name = "HastaDogumTarihi")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString ="{0:dd-MM-yyyy}",ApplyFormatInEditMode = true)]
         public string? HastalarDogumTarihi { get; set; }
         
-        [Required(ErrorMessage = "cinsiyet boş olmaz")]
+        [Required(ErrorMessage = "Cinsiyet boş olamaz")]
         [Display(Name = "HastaCinsiyet")]
         [EnumDataType(typeof(Cinsiyet))]
         public string? HastalarCinsiyet { get; set; }
       
-        [Required(ErrorMessage = "kan grubu boş olmaz")]
+        [Required(ErrorMessage = "Kan grubu boş olamaz")]
         [Display(Name = "HastaKanGrubu")]
         [EnumDataType(typeof(KanGrubu))]
         public string? HastalarKanGrubu { get; set; }
@@ -45,14 +46,14 @@ namespace HastaneOtomasyonu.Models
     }
     public enum KanGrubu
     {
-        Apzt,
-        Bpzt,
-        Sıfırpzt,
-        Angt,
-        Bngt,
-        Sıfırngt,
-        ABpzt,
-        ABngt
+        Apozitif,
+        Bpozitif,
+        Sıfırpoizit,
+		ABpozitif,
+		Anegatif,
+        Bnegatif,
+        Sıfırnegatif,
+        ABnegatif
 
     }
 }

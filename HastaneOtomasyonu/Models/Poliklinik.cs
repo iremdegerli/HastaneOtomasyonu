@@ -10,12 +10,12 @@ namespace HastaneOtomasyonu.Models
 
         public int Poliklinid { get; set; }
 
-        [Required(ErrorMessage = "poliklink boş olmaz")]
+        [Required(ErrorMessage = "Poliklinik ismi boş olamaz")]
         [Display(Name = "Poliklinik")]
         public string? PoliklinikAd {  get; set; }
         
-        [Required(ErrorMessage = "doktor sayısı boş olmaz")]
-        [Range(4,15, ErrorMessage ="doktor sayısı 4le 15 arasında")]
+        [Required(ErrorMessage = "Doktor sayısı giriniz.")]
+        [Range(1,7, ErrorMessage ="Doktor sayısı 1 ile 17 arasında olmalı")]
         public int DoktorSayisi{ get; set; }
     }
 }

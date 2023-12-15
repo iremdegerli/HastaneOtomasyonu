@@ -9,12 +9,12 @@ namespace HastaneOtomasyonu.Models
         [Key]
         public int AdminId { get; set; }
       
-        [Required(ErrorMessage = "Mail boş olmaz")]
+        [Required(ErrorMessage = "Mail boş olamaz")]
         [Display(Name = "AdminMail")]
         [DataType(DataType.EmailAddress)]
         public string? AdminMail { get; set; }
        
-        [Required(ErrorMessage = "şifre boş olmaz")]
+        [Required(ErrorMessage = "Şifre boş olamaz")]
         [Display(Name = "AdminPassword")]
         [DataType(DataType.Password)]
         public int AdminPassword { get; set; }
