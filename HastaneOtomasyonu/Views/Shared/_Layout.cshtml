@@ -52,11 +52,24 @@
 							font-size: 15px;
 							cursor: pointer;
 						}
+
+						#kayitOlButton {
+							background-color: #d9155c; /* Açık mor arka plan rengi */
+							color: white; /* Koyu mor metin rengi */
+							border: none; /* Kenarlık olmaması */
+							padding: 10px 20px; /* Buton içerisindeki içerikle arka plan arasındaki boşluklar */
+							border-radius: 40px; /* Yuvarlak kenarlıklı buton */
+							text-decoration: none; /* Link görünümündeki alt çizgiyi kaldırma */
+							display: inline-block;
+							font-size: 15px;
+							cursor: pointer;
+						}
 					</style>
 
 					<div id="randevuAlButtonContainer">
-						<a id="girisYapButton" href="@Url.Action("girisYap", "KullanıcıHesap")">Giriş Yap</a>
-                        <a id="randevuAlButton" href="@Url.Action("RandevuAl", "Randevu")">Randevu Al</a>
+						<a id="girisYapButton" href="@Url.Action("Login", "Giris")">Giriş Yap</a>
+                        <a id="randevuAlButton" href="@Url.Action("randevuAl", "RandevuAl")">Randevu Al</a>
+						<a id="kayıtOlButton" href="@Url.Action("Register", "Giris")">Kayıt Ol</a>
                     </div>
 			<div class="clear"></div> 
 		</div>
