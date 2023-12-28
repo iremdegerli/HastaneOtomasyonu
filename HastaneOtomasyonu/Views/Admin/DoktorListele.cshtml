@@ -1,0 +1,70 @@
+﻿@model List<HastaneOtomasyonu.Models.Doktorlar>
+
+@{
+    ViewData["Title"] = "DoktorListele";
+    Layout = "~/Views/Shared/_AdminPanelLayout.cshtml";
+}
+
+<div id="page-wrapper">
+	<div class="main-page">
+		<h3 class="title1">Tüm Doktorlar</h3>
+		<div class="blank-page widget-shadow scroll" id="style-2 div1">
+			<section class="section_container booking_container">
+				<div class="booking__nav">
+					<span>Doktor Bilgileri</span>
+				</div>
+				<style>
+					table {
+						border-collapse: collapse;
+						width: 100%;
+						margin-top: 20px;
+					}
+
+					th, td {
+						border: 1px solid #dddddd;
+						text-align: left;
+						padding: 8px;
+					}
+
+					th {
+						background-color: #f2f2f2;
+					}
+
+					tr:nth-child(even) {
+						background-color: #f9f9f9;
+					}
+
+					tr:hover {
+						background-color: #e0e0e0;
+					}
+				</style>
+				<table border="1">
+					<thead>
+						<tr>
+							<td>Doktor No</td>
+							<td>Doktor Adı</td>
+							<td>Doktor Soyadı</td>
+							<td>Doktor Maili</td>
+							<td>Doktor Bölümü</td>
+						</tr>
+					</thead>
+					<tbody>
+						@if(Model != null)
+						{
+							@foreach (var doktor in Model)
+							{
+								<tr>
+									<td>@doktor.DoktorlarId</td>
+									<td>@doktor.DoktorlarAd</td>
+									<td>@doktor.DoktorlarSoyad</td>
+									<td>@doktor.DoktorlarMail</td>
+									<td>@doktor.DoktorlarBolum</td>
+								</tr>
+							}
+						}
+					</tbody>
+				</table>
+			</section>
+		</div>
+	</div>
+</div>

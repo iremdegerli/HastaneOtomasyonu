@@ -1,0 +1,58 @@
+﻿@model HastaneOtomasyonu.Models.Doktorlar
+@{
+    ViewData["Title"] = "Doktor";
+    Layout = "~/Views/Shared/_AdminPanelLayout.cshtml";
+}
+
+<div id="page-wrapper">
+	<div class="main-page">
+		<h3 class="title1">Doktor Ekle</h3>
+		<div class="blank-page widget-shadow scroll" id="style-2 div1">
+			<section class="section_container booking_container">
+				<div class="booking__nav">
+					<span>Doktor Bilgileri</span>
+				</div>
+				<p style="color:green;">@ViewBag.correct</p>
+				<form action="Doktor" method="post">
+					<div class="form__group">
+						<span><i class="ri-flight-takeoff-line"></i></span>
+						<div class="input__content">
+							<p>Doktor Adı</p>
+							<div class="input__group">
+								<input type="text" asp-for="DoktorlarAd" />
+							</div>
+						</div>
+					</div>
+					<div class="form__group">
+						<span><i class="ri-flight-takeoff-line"></i></span>
+						<div class="input__content">
+							<p>Doktor Soyadı</p>
+							<div class="input__group">
+								<input type="text" asp-for="DoktorlarSoyad" />
+							</div>
+						</div>
+					</div>
+					<div class="form__group">
+						<span><i class="ri-flight-land-line"></i></span>
+						<div class="input__content">
+							<p>Doktor Maili</p>
+							<div class="input__group">
+								<input type="text" asp-for="DoktorlarMail" />
+							</div>
+						</div>
+					</div>
+					<div class="form__group">
+						<span><i class="ri-flight-takeoff-line"></i></span>
+						<div class="input__content">
+							<p>Doktor Bölümü</p>
+							<div class="input__group">
+								<input type="text" asp-for="DoktorlarBolum" />
+							</div>
+						</div>
+					</div>
+					<button class="btn3">Ekle</button>
+				</form>
+			</section>
+		</div>
+	</div>
+</div>

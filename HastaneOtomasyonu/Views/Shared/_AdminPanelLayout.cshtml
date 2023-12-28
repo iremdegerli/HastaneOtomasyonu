@@ -25,24 +25,11 @@
 						<a href="index.html"><img src="images/logo.png" style="width:25%;" alt="" /></a>
 					</div>
 					<style>
-						#randevuAlButtonContainer {
+						#CikisYapButtonContainer {
 							margin-top: 20px;
 							text-align: right;
 						}
-
-						#randevuAlButton {
-							background-color: #d9155c; 
-							color: white; 
-							border: none; 
-							padding: 10px 20px; 
-							border-radius: 40px; 
-							text-decoration: none; 
-							display: inline-block;
-							font-size: 15px;
-							cursor: pointer;
-						}
-
-						#girisYapButton {
+							#cikisYapButton {
 							background-color: #d9155c;
 							color: white;
 							border: none;
@@ -55,9 +42,8 @@
 						}
 					</style>
 
-					<div id="randevuAlButtonContainer">
-						<a id="girisYapButton" href="@Url.Action("girisYap", "KullanıcıHesap")">Giriş Yap</a>
-						<a id="randevuAlButton" href="@Url.Action("RandevuAl", "Randevu")">Randevu Al</a>
+					<div id="cikisYapButtonContainer">
+						<a id="cikisYapButton" href="@Url.Action("cikisYap", "KullanıcıHesap")">Çıkış Yap</a>
 					</div>
 					<div class="clear"></div>
 				</div>
@@ -65,20 +51,28 @@
 					<div id="cssmenu">
 						<ul>
 							<li class="active">
-								<a href="@Url.Action("Index", "Home")">
-									<span>ANASAYFA</span>
+								<a href>
+									<span>YÖNETİCİ Panelİ</span>
 								</a>
 							</li>
-							<li><a href="about.html"><span>HASTANEMİZ</span></a></li>
 							<li class="has-sub">
-								<a href="services.html"><span>POLİKLİNİKLER</span></a>
+								<a href="services.html"><span>Doktorlar</span></a>
 								<ul>
-									<li class="has-sub"><a href="services.html"><span>Service 1</span></a></li>
-									<li class="has-sub"><a href="services.html"><span>Service 2</span></a></li>
+									<li class="has-sub"><a href="Doktor"><span>Ekle</span></a></li>
+									<li class="has-sub"><a href="DoktorListele"><span>Doktor Detayları</span></a></li>
+
 								</ul>
 							</li>
 
-							<li class="last"><a href="contact.html"><span>İLETİŞİM BİLGİLERİ</span></a></li>
+							<li class="last"><a href="contact.html"><span>Hastalar</span></a></li>
+							<li class="has-sub">
+								<a href="services.html"><span>POLİKLİNİK</span></a>
+								<ul>
+									<li class="has-sub"><a href="Poliklinik"><span>Ekle</span></a></li>
+									<li class="has-sub"><a href="PoliklinikListele"><span>Poliklinik Detayları</span></a></li>
+
+								</ul>
+							</li>
 						</ul>
 					</div>
 
@@ -87,9 +81,11 @@
 			</div>
 			
 			<div class="main">
-				
-		
 
+
+				<div>
+					@RenderBody()
+				</div>
 
 				<div class="footer">
 					<div class="footer-top">
@@ -147,9 +143,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		<div>
-			@RenderBody()
 		</div>
 </body>
 </html>
