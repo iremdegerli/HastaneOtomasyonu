@@ -48,7 +48,7 @@ namespace HastaneOtomasyonu.Models
     {
         Apozitif,
         Bpozitif,
-        Sıfırpoizit,
+        Sıfırpozitif,
 		ABpozitif,
 		Anegatif,
         Bnegatif,
