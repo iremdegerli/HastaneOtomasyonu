@@ -1,4 +1,5 @@
-﻿<!DOCTYPE HTML>
+﻿@model HastaneOtomasyonu.Models.KullaniciHesap
+<!DOCTYPE HTML>
 <html>
 <head>
 	<title>Diamond Hastanesi</title>
@@ -31,24 +32,36 @@
 						}
 
 						#randevuAlButton {
-							background-color: #d9155c;
-							color: white;
-							border: none;
-							padding: 10px 20px;
-							border-radius: 40px;
-							text-decoration: none;
+							background-color: #d9155c; /* Açık mor arka plan rengi */
+							color: white; /* Koyu mor metin rengi */
+							border: none; /* Kenarlık olmaması */
+							padding: 10px 20px; /* Buton içerisindeki içerikle arka plan arasındaki boşluklar */
+							border-radius: 40px; /* Yuvarlak kenarlıklı buton */
+							text-decoration: none; /* Link görünümündeki alt çizgiyi kaldırma */
 							display: inline-block;
 							font-size: 15px;
 							cursor: pointer;
 						}
 
 						#girisYapButton {
-							background-color: #d9155c;
-							color: white;
-							border: none;
-							padding: 10px 20px;
-							border-radius: 40px;
-							text-decoration: none;
+							background-color: #d9155c; /* Açık mor arka plan rengi */
+							color: white; /* Koyu mor metin rengi */
+							border: none; /* Kenarlık olmaması */
+							padding: 10px 20px; /* Buton içerisindeki içerikle arka plan arasındaki boşluklar */
+							border-radius: 40px; /* Yuvarlak kenarlıklı buton */
+							text-decoration: none; /* Link görünümündeki alt çizgiyi kaldırma */
+							display: inline-block;
+							font-size: 15px;
+							cursor: pointer;
+						}
+
+						#kayitOlButton {
+							background-color: #d9155c; /* Açık mor arka plan rengi */
+							color: white; /* Koyu mor metin rengi */
+							border: none; /* Kenarlık olmaması */
+							padding: 10px 20px; /* Buton içerisindeki içerikle arka plan arasındaki boşluklar */
+							border-radius: 40px; /* Yuvarlak kenarlıklı buton */
+							text-decoration: none; /* Link görünümündeki alt çizgiyi kaldırma */
 							display: inline-block;
 							font-size: 15px;
 							cursor: pointer;
@@ -56,8 +69,8 @@
 					</style>
 
 					<div id="randevuAlButtonContainer">
-						<a id="girisYapButton" href="@Url.Action("girisYap", "KullanıcıHesap")">Giriş Yap</a>
-						<a id="randevuAlButton" href="@Url.Action("RandevuAl", "Randevu")">Randevu Al</a>
+						<a id="randevuAlButton" href="@Url.Action("randevuAl", "RandevuAl")">Randevu Al</a>
+						<a id="kayitOlButton" href="@Url.Action("Register", "Giris")">Kayıt Ol</a>
 					</div>
 					<div class="clear"></div>
 				</div>
@@ -88,68 +101,70 @@
 
 			<div class="main">
 
+				<style>
+					input {
+						display: block;
+						width: 80%;
+						height: 30px;
+						margin-top: 1.0em;
+						padding: 4px;
+					}
 
+					.login-box {
+						padding: 1em 1em 1em 1em;
+						margin: auto;
+						text-align: center;
+						display: block;
+						background-color: #6f92dc;
+						/*border: 1px dashed white;*/
+						width: 60%;
+						height: auto;
+					}
 
+					.outer-box {
+						display: block;
+						margin: auto;
+						background: #6f92dc;
+						border-radius: 5px;
+						width: 50%;
+						height: 20em;
+						height: auto;
+					}
 
-				<div class="footer">
-					<div class="footer-top">
-						<div class="col_1_of_4 span_1_of_4">
-							<h3>INFORMATION</h3>
-							<ul>
-								<li><a href="#">About us</a></li>
-								<li><a href="#">Sitemap</a></li>
-								<li><a href="#">Contact</a></li>
-								<li><a href="#">Terms and conditions</a></li>
-								<li><a href="#">Legal Notice</a></li>
-							</ul>
-						</div>
-						<div class="col_1_of_4 span_1_of_4">
-							<h3>CATEGORIES</h3>
-							<ul>
-								<li><a href="#">New products</a></li>
-								<li><a href="#">top sellers</a></li>
-								<li><a href="#">Specials</a></li>
-								<li><a href="#">Products</a></li>
-								<li><a href="#">Comments</a></li>
-							</ul>
-						</div>
-						<div class="col_1_of_4 span_1_of_4">
-							<h3>My ACCOUNT</h3>
-							<ul>
-								<li><a href="#">Your Account</a></li>
-								<li><a href="#">Personal info</a></li>
-								<li><a href="#">Prices</a></li>
-								<li><a href="#">Address</a></li>
-								<li><a href="#">Locations</a></li>
-							</ul>
-						</div>
-						<div class="col_1_of_4 span_1_of_4 footer-lastgrid">
-							<h3>BİZE ULAŞIN</h3>
-							<ul class="list3">
-								<li>
-									<img src="images/home.png" alt="" />
-									<div class="extra-wrap">
-										<p>Sakarya üniversitesi,<br>Bilgisayar ve Bilişim Bilimleri Fakültesi.</p>
-									</div>
-								</li>
-								<li>
-									<img src="images/phone.png" alt="" />
-									<div class="extra-wrap">
-										<p>+90 555 444 3232</p>
-									</div>
-								</li>
-							</ul>
-						</div>
-						<div class="clear"></div>
+					#btn-login {
+						display: block;
+						width: 100%;
+						height: 40px;
+						margin-top: 2.0em;
+						border-radius: 4px;
+						background-color: #d9155c;
+						color: #fff;
+					}
+				</style>
+
+				<div class="outer-box">
+					<div class="login-box">
+						<center>
+							<form action="Login" method="post">
+								<input type="email" placeholder="E-mail" asp-for="Email">
+								<input type="password" placeholder="Şifre" asp-for="Password">
+								<button id="btn-login">Giriş Yap</button>
+							</form>
+						</center>
 					</div>
-					<div class="copy">
-						<p> © 2023 SAKARYA ÜNİVERSİTESİ | Design by İREM DEĞERLİ</a></p>
-					</div>
+				</div>
+				<br />
+			</div>
+			<div class="footer">
+				<div class="copy">
+					<p> © 2023 SAKARYA ÜNİVERSİTESİ | Design by İREM DEĞERLİ</p>
 				</div>
 			</div>
 		</div>
+
 		<div>
 			@RenderBody()
 		</div>
+	</div>
 </body>
 </html>
