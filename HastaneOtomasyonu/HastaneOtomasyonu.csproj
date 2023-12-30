@@ -7,6 +7,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\Randevu.cs" />
+    <Compile Remove="Views\Home\Index1.cshtml.cs" />
+    <Compile Remove="Views\Home\Index3.cshtml.cs" />
+    <Compile Remove="Views\Shared\PoliklinikSayfası.cshtml.cs" />
+    <Compile Remove="Views\Shared\PoliklinikView.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Home\Index1.cshtml" />
+    <Content Remove="Views\Home\Index2.cshtml" />
+    <Content Remove="Views\Home\Index3.cshtml" />
+    <Content Remove="Views\Shared\PoliklinikSayfası.cshtml" />
+    <Content Remove="Views\Shared\PoliklinikView.cshtml" />
+    <Content Remove="Views\Shared\_Pol.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.14" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.14" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.6" />

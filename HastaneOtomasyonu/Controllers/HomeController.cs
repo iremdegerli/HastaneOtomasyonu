@@ -17,8 +17,19 @@ namespace HastaneOtomasyonu.Controllers
         {
             return View();
         }
-
-        public IActionResult Privacy()
+		public IActionResult Iletisim()
+		{
+			return View();
+		}
+		public IActionResult Poliklinik()
+		{
+			return View();
+		}
+        public IActionResult IndexG()
+        {
+            return View();
+        }
+		public IActionResult Privacy()
         {
             return View();
         }

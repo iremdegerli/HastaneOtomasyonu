@@ -4,55 +4,78 @@
     Layout = "~/Views/Shared/_AdminPanelLayout.cshtml";
 }
 
-<div id="page-wrapper">
-	<div class="main-page">
-		<h3 class="title1">Doktor Ekle</h3>
-		<div class="blank-page widget-shadow scroll" id="style-2 div1">
-			<section class="section_container booking_container">
-				<div class="booking__nav">
-					<span>Doktor Bilgileri</span>
+<style>
+
+	input {
+		display: block;
+		width: 80%;
+		height: 30px;
+		margin-top: 1.0em;
+		padding: 4px;
+	}
+
+	.login-box {
+		padding: 1em 1em 1em 1em;
+		margin: auto;
+		text-align: center;
+		display: block;
+		background-color: #6f92dc;
+		/*border: 1px dashed white;*/
+		width: 60%;
+		height: auto;
+	}
+
+	.outer-box {
+		display: block;
+		margin: auto;
+		background: #6f92dc;
+		border-radius: 5px;
+		width: 50%;
+		height: 20em;
+		height: auto;
+	}
+
+	button {
+		display: block;
+		width: 100%;
+		height: 40px;
+		margin-top: 2.0em;
+		border-radius: 40px;
+		background-color: #d9155c;
+		color: #fff;
+	}
+</style>
+
+<div class="outer-box">
+	<div class="login-box">
+		<center>
+			<p style="color:green;">@ViewBag.correct</p>
+			<form action="Doktor" method="post">
+				<div>
+					<p>Doktor Adı</p>
+					<input type="text" asp-for="DoktorlarAd" />
+					<br />
 				</div>
-				<p style="color:green;">@ViewBag.correct</p>
-				<form action="Doktor" method="post">
-					<div class="form__group">
-						<span><i class="ri-flight-takeoff-line"></i></span>
-						<div class="input__content">
-							<p>Doktor Adı</p>
-							<div class="input__group">
-								<input type="text" asp-for="DoktorlarAd" />
-							</div>
-						</div>
-					</div>
-					<div class="form__group">
-						<span><i class="ri-flight-takeoff-line"></i></span>
-						<div class="input__content">
-							<p>Doktor Soyadı</p>
-							<div class="input__group">
-								<input type="text" asp-for="DoktorlarSoyad" />
-							</div>
-						</div>
-					</div>
-					<div class="form__group">
-						<span><i class="ri-flight-land-line"></i></span>
-						<div class="input__content">
-							<p>Doktor Maili</p>
-							<div class="input__group">
-								<input type="text" asp-for="DoktorlarMail" />
-							</div>
-						</div>
-					</div>
-					<div class="form__group">
-						<span><i class="ri-flight-takeoff-line"></i></span>
-						<div class="input__content">
-							<p>Doktor Bölümü</p>
-							<div class="input__group">
-								<input type="text" asp-for="DoktorlarBolum" />
-							</div>
-						</div>
-					</div>
-					<button class="btn3">Ekle</button>
-				</form>
-			</section>
-		</div>
+				<div>
+					<p>Doktor Soyadı</p>
+					<input type="text" asp-for="DoktorlarSoyad" />
+					<br />
+				</div>
+				<div>
+					<p>Doktor Maili</p>
+					<input type="text" asp-for="DoktorlarMail" />
+					<br />
+				</div>
+				<div>
+					<p>Doktor Bölümü</p>
+					<input type="text" asp-for="DoktorlarBolum" />
+					<br />
+				</div>
+				<button>Ekle</button>
+			</form>
+		
+		</center>
 	</div>
 </div>
+<br>
+

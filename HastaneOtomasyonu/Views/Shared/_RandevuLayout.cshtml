@@ -25,6 +25,14 @@
 						<a href="index.html"><img src="images/logo.png" style="width:25%;" alt="" /></a>
 					</div>
 					<style>
+						body {
+							font-family: "Roboto", Helvetica, Arial, sans-serif;
+							font-weight: 100;
+							font-size: 13px;
+							line-height: 30px;
+							color: #888;
+							background: #a2cbff;
+						}
 						#randevuAlButtonContainer {
 							margin-top: 20px;
 							text-align: right;
@@ -56,8 +64,9 @@
 					</style>
 
 					<div id="randevuAlButtonContainer">
-						<a id="girisYapButton" href="@Url.Action("girisYap", "KullanıcıHesap")">Giriş Yap</a>
-						<a id="randevuAlButton" href="@Url.Action("RandevuAl", "Randevu")">Randevu Al</a>
+						<a id="girisYapButton" href="@Url.Action("Login", "Giris")">Giriş Yap</a>
+						<a id="randevuAlButton" href="@Url.Action("Randevu", "Randevu")">Randevu Al</a>
+						<a id="kayitOlButton" href="@Url.Action("Register", "Giris")">Kayıt Ol</a>
 					</div>
 					<div class="clear"></div>
 				</div>

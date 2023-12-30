@@ -1,29 +1,29 @@
 ﻿<!DOCTYPE HTML>
 <html>
 <head>
-<title>Diamond Hastanesi</title>
-<link href="~/hastane/css/style.css" rel="stylesheet" type="text/css" media="all" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="~/hastane/css/default.css" rel="stylesheet" type="text/css" media="all" />
-<link href="~/hastane/css/nivo-slider.css" rel="stylesheet" type="text/css" media="all" />
-<link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-<script src="~/hastane/js/jquery-1.9.0.min.js"></script>
-     <script src="~/hastane/js/jquery.nivo.slider.js"></script>
-    <script type="text/javascript">
-    $(window).load(function() {
-        $('#slider').nivoSlider();
-    });
-    </script>
+	<title>Diamond Hastanesi</title>
+	<link href="~/hastane/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="~/hastane/css/default.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="~/hastane/css/nivo-slider.css" rel="stylesheet" type="text/css" media="all" />
+	<link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<script src="~/hastane/js/jquery-1.9.0.min.js"></script>
+	<script src="~/hastane/js/jquery.nivo.slider.js"></script>
+	<script type="text/javascript">
+		$(window).load(function () {
+			$('#slider').nivoSlider();
+		});
+	</script>
 </head>
 <body>
-<div class="wrap">
-  <div class="wrapper-box">
-	<div class="header">
-		<div class="header-top">
-			<div class="logo">
-				<a href="index.html"><img src="images/logo.png" style="width:25%;" alt=""/></a>
-			</div>
+	<div class="wrap">
+		<div class="wrapper-box">
+			<div class="header">
+				<div class="header-top">
+					<div class="logo">
+						<a href="index.html"><img src="images/logo.png" style="width:25%;" alt="" /></a>
+					</div>
 					<style>
 						body {
 							font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -49,6 +49,7 @@
 							font-size: 15px;
 							cursor: pointer;
 						}
+
 						#girisYapButton {
 							background-color: #d9155c; /* Açık mor arka plan rengi */
 							color: white; /* Koyu mor metin rengi */
@@ -75,109 +76,109 @@
 					</style>
 
 					<div id="randevuAlButtonContainer">
-						<a id="girisYapButton" href="@Url.Action("Login", "Giris")">Giriş Yap</a>
 						<a id="randevuAlButton" href="@Url.Action("Randevu", "Randevu")">Randevu Al</a>
-						<a id="kayitOlButton" href="@Url.Action("Register", "Giris")">Kayıt Ol</a>
-                    </div>
-			<div class="clear"></div> 
-		</div>
-		<div class="header-bottom">
-			<div id="cssmenu">
-				<ul>
-				   <li class="active">
-					   <a href="@Url.Action("Index", "Home")">
-						   <span>ANASAYFA</span></a>
-					</li>
-					<li class="has-sub"><a href="@Url.Action("Poliklinik", "Home")"><span>POLİKLİNİKLER</span></a></li>
-							<li class="last"><a href="@Url.Action("Iletisim","Home")"><span>BİZE ULAŞIN</span></a></li>
-				</ul>
-			</div>
-
-			<div class="clear"></div> 
-		</div>
-	</div>
-	<div class="banner">
-	<div id="wrapper">
- 		<div class="slider-wrapper theme-default">
-            <div id="slider" class="nivoSlider">
-                <img src="images/banner2.jpg"  alt="" />
-               	<img src="images/banner1.jpg"  alt="" />
-                <img src="images/banner3.jpg"  alt="" />
-            </div>
-        </div>
-	</div>
-	</div>
-	<div class="main">
-		<div class="content-top">
-				<div>
-					<div class="title-img">
-						<div class="title"><img src="images/h1.png" style="width:25%;" alt=""></div>
-							<div class="title-desc"><p>Diamond Hastanesi</p></div>
-							<div class="clear"></div> 
+						<a id="kayitOlButton" href="@Url.Action("Index", "Home")">Çıkış Yap</a>
 					</div>
-					<h4 class=head>Vizyonumuz</h4>
+					<div class="clear"></div>
+				</div>
+				<div class="header-bottom">
+					<div id="cssmenu">
+						<ul>
+							<li class="active">
+								<a href="@Url.Action("Index", "Home")">
+									<span>ANASAYFA</span>
+								</a>
+							</li>
+							<li class="has-sub"><a href="@Url.Action("Poliklinik", "Home")"><span>POLİKLİNİKLER</span></a></li>
+							<li class="last"><a href="@Url.Action("Iletisim","Home")"><span>BİZE ULAŞIN</span></a></li>
+						</ul>
+					</div>
+
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="banner">
+				<div id="wrapper">
+					<div class="slider-wrapper theme-default">
+						<div id="slider" class="nivoSlider">
+							<img src="images/banner2.jpg" alt="" />
+							<img src="images/banner1.jpg" alt="" />
+							<img src="images/banner3.jpg" alt="" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="main">
+				<div class="content-top">
+					<div>
+						<div class="title-img">
+							<div class="title"><img src="images/h1.png" style="width:25%;" alt=""></div>
+							<div class="title-desc"><p>Diamond Hastanesi</p></div>
+							<div class="clear"></div>
+						</div>
+						<h4 class=head>Vizyonumuz</h4>
 						<p>
 							Diamond Hastanesi, sağlık sektöründe mükemmeliyeti benimseyen ve toplumun sağlığını güçlendirmeyi amaçlayan bir vizyona sahiptir. Modern tıbbi teknolojileri kullanarak, hasta odaklı bir yaklaşım benimseyerek, etik değerlere bağlı kalarak, her geçen gün daha iyi bir sağlık hizmeti sunmayı hedeflemektedir.
 						</p>
-					<hr>
-					<h4 class=head>Misyonumuz</h4>
+						<hr>
+						<h4 class=head>Misyonumuz</h4>
 						<p>
 							Diamond Hastanesi, hastalarına uzman bir sağlık hizmeti sunmayı, sürekli eğitim ve gelişimle kalite standartlarını yükseltmeyi ve toplum sağlığını iyileştirmeyi misyon edinmiştir. Hasta memnuniyetini en üst düzeye çıkarmak, güvenilir ve etik bir anlayışla tedavi sunmak, yenilikçi çözümler geliştirmek ve toplumsal sorumluluk bilinciyle hareket etmek Diamond Hastanesi'nin temel misyonunu oluşturmaktadır.
 						</p>
-					<hr>
-					<h4 class=head>Hizmetler</h4>
+						<hr>
+						<h4 class=head>Hizmetler</h4>
 						<p>
 							Diamond Hastanesi, geniş bir sağlık hizmetleri yelpazesi sunarak hastalarına kapsamlı bir tedavi imkanı sağlar. Bu hizmetler arasında genel cerrahi, iç hastalıkları, kadın doğum, çocuk sağlığı, radyoloji, laboratuvar hizmetleri, acil servis ve daha birçok branş bulunmaktadır. Teknolojik altyapısı ve uzman kadrosuyla hastalarına modern, güvenilir ve etkili sağlık hizmetleri sunmaktadır.
 							<br>
 							Diamond Hastanesi, hasta odaklı yaklaşımıyla ve kaliteli sağlık hizmetleriyle tanınan bir kurum olmayı amaçlamaktadır. Hastalarına güvenli, etik değerlere uygun ve bilimsel temellere dayalı bir tedavi sunarak toplumun sağlık standartlarını yükseltmeye katkıda bulunmayı hedeflemektedir.
 						</p>
-					<hr>
-				</div>
-				
-				<div class="clear"></div>
-		<div class="title-img">
+						<hr>
+					</div>
+
+					<div class="clear"></div>
+					<div class="title-img">
 						<div class="title"><img src="images/h2.png" style="width:25%;" alt=""></div>
 						<div class="title-desc"><p>POLİKLİNİKLER</p></div>
 						<div class="clear"></div>
-		</div>
-		<div class="content-bottom">
-			<div class="col_1_of_bottom span_1_of_bottom">
+					</div>
+					<div class="content-bottom">
+						<div class="col_1_of_bottom span_1_of_bottom">
 							<img src="images/pic.jpg" style="width:100%;" alt="" />
-				<div class="main_link">
-						<h5>Genel Cerrahi</h5>
-							<p> Genel cerrahi, vücuttaki çeşitli organlarda ortaya çıkabilen geniş bir yelpazedeki sorunları ele alır.</p>
+							<div class="main_link">
+								<h5>Genel Cerrahi</h5>
+								<p> Genel cerrahi, vücuttaki çeşitli organlarda ortaya çıkabilen geniş bir yelpazedeki sorunları ele alır.</p>
+							</div>
+						</div>
+						<div class="col_1_of_bottom span_1_of_bottom">
+							<img src="images/pic1.jpg" style="width:94%;" alt="" />
+							<div class="main_link">
+								<h5>Dahiliye</h5>
+								<p>Dahiliye, yetişkinlerin iç organlarının hastalıkları ve genel sağlık sorunlarını ele alır. </p>
+							</div>
+						</div>
+						<div class="col_1_of_bottom span_1_of_last">
+							<img src="images/pic3.jpg" style="width:104%;" alt="" />
+							<div class="main_link">
+								<h5>Kardiyoloji</h5>
+								<p>Kardiyoloji, kalp ve damar sistemindeki hastalıkları inceleyen, tanı koyan ve tedavi eden tıp dalıdır.</p>
+							</div>
+						</div>
+
+						<a href="@Url.Action("Poliklinik", "Home")" class="btn btn-primary" style="margin-top: 20px;
+							text-align: left; background-color: #d9155c;color: white;">more</a>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="footer">
+					<div class="copy">
+						<p> © 2023 SAKARYA ÜNİVERSİTESİ | Design by İREM DEĞERLİ</p>
+					</div>
 				</div>
 			</div>
-				<div class="col_1_of_bottom span_1_of_bottom">
-							<img src="images/pic1.jpg" style="width:94%;" alt="" />
-				     <div class="main_link">
-						<h5>Dahiliye</h5>
-								<p>Dahiliye, yetişkinlerin iç organlarının hastalıkları ve genel sağlık sorunlarını ele alır. </p>
-					</div>
-				</div>
-				<div class="col_1_of_bottom span_1_of_last">
-							<img src="images/pic3.jpg" style="width:104%;" alt="" />
-				     <div class="main_link">
-						<h5>Kardiyoloji</h5>
-								<p>Kardiyoloji, kalp ve damar sistemindeki hastalıkları inceleyen, tanı koyan ve tedavi eden tıp dalıdır.</p>
-					</div>
-				 </div>
-				
-						<a href="@Url.Action("Poliklinik", "Home")"	class="btn btn-primary" style="margin-top: 20px;
-							text-align: left; background-color: #d9155c;color: white;">more</a>
-				<div class="clear"></div> 
 		</div>
 	</div>
-	<div class="footer">
-		<div class="copy">
-			<p> © 2023 SAKARYA ÜNİVERSİTESİ | Design by İREM DEĞERLİ</p>
-		</div>
+	<div>
+		@RenderBody()
 	</div>
-</div>
-</div>
-</div>
-<div>
-	@RenderBody()
-</div>
 </body>
 </html>

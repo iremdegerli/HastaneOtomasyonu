@@ -44,10 +44,10 @@ namespace HastaneOtomasyonu.Controllers
             await hastaneCS.KullaniciHesaplar.AddAsync(kullanici);
             await hastaneCS.SaveChangesAsync();
             ViewBag.correct = "Kayıt başarıyla tamamlandı! Giriş yapabilmek için lütfen Giriş Yap sayfasına geçiniz.";
-            return View("Register");
-        }
+			return RedirectToAction("IndexG", "Home");
+		}
 
-        [HttpGet]
+		[HttpGet]
         public IActionResult Login()
         {
             return View();
@@ -60,7 +60,7 @@ namespace HastaneOtomasyonu.Controllers
 
             if (check != null)
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("IndexG", "Home");
             }
 
             ViewBag.error = "Kayıtlı kullanıcı bulunamadı!";
