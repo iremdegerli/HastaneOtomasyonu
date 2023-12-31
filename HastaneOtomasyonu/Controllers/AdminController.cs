@@ -1,10 +1,15 @@
 ﻿using HastaneOtomasyonu.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.Extensions.DependencyInjection;
 namespace HastaneOtomasyonu.Controllers
 {
-	public class AdminController : Controller
+	public class AdminController : Controller 
 	{
 		private readonly HastaneCS hastaneCS;
 
@@ -16,6 +21,24 @@ namespace HastaneOtomasyonu.Controllers
 		{
 			return View();
 		}
+		public ActionResult Login()
+		{
+			return View();
+		}
+		[HttpPost]
+		public ActionResult Login(Admin admin)
+		{
+			var login = hastaneCS.Admins.Where(x => x.AdminMail == admin.AdminMail).SingleOrDefault();
+			if(login!=null&&login.AdminMail==admin.AdminMail&& login.AdminPassword== admin.AdminPassword)
+			{
+				HttpContext.Session.SetString("eposta", login.AdminId.ToString());
+				HttpContext.Session.SetString("eposta", login.AdminMail ?? string.Empty);
+
+				return RedirectToAction("Index", "Admin");
+			}
+			ViewBag.Uyari = "kullanıcı adı ya da şifre yanlış";
+			return View();
+		} 
 
 		[HttpGet]
 		public IActionResult Doktor()
