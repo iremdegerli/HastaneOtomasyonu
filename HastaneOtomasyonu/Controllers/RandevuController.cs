@@ -13,10 +13,11 @@ namespace HastaneOtomasyonu.Controllers
 			}
 			public async Task<IActionResult> Index(Randevu ekleKullanici)
 			{
-				var randevu = new Randevu()
+            var randevu = new Randevu()
 				{
 					RandevuId = ekleKullanici.RandevuId,
-					HastalarAd = ekleKullanici.HastalarAd,
+                    Tc = ekleKullanici.Tc,
+                    HastalarAd = ekleKullanici.HastalarAd,
 					HastalarSoyad = ekleKullanici.HastalarSoyad,
 					DoktorlarAd = ekleKullanici.DoktorlarAd,
 					DoktorlarSoyad = ekleKullanici.DoktorlarSoyad,

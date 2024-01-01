@@ -62,8 +62,8 @@
 						}
 
 						#kayitOlButton {
-							background-color: #d9155c; /* Açık mor arka plan rengi */
-							color: white; /* Koyu mor metin rengi */
+							background-color: #d9155c; /* Arka plan rengi */
+							color: white; /* Metin rengi */
 							border: none; /* Kenarlık olmaması */
 							padding: 10px 20px; /* Buton içerisindeki içerikle arka plan arasındaki boşluklar */
 							border-radius: 40px; /* Yuvarlak kenarlıklı buton */
@@ -76,7 +76,6 @@
 
 					<div id="randevuAlButtonContainer">
 						<a id="girisYapButton" href="@Url.Action("Login", "Giris")"><span>@_localization.Getkey("Giriş Yap")</span></a>
-						<a id="randevuAlButton" href="@Url.Action("Index", "Randevu")"><span>@_localization.Getkey("Randevu Al")</span></a>
 						<a id="kayitOlButton" href="@Url.Action("Register", "Giris")"><span>@_localization.Getkey("Kayıt Ol")</span></a>
                     </div>
 			<div class="clear"></div> 
@@ -120,10 +119,13 @@
 	<div class="main">
 		<div class="content-top">
 				<div>
+						<hr />
 					<div class="title-img">
+							
 						<div class="title"><img src="images/h1.png" style="width:25%;" alt=""></div>
 							<div class="title-desc"><p><span>@_localization.Getkey("Diamond Hastanesi")</span></p></div>
 							<div class="clear"></div> 
+							
 					</div>
 						<h4 class=head><span>@_localization.Getkey("VİZYONUMUZ")</span></h4>
 						<p>
@@ -164,7 +166,7 @@
 								<p><span>@_localization.Getkey("Dahiliye, yetişkinlerin iç organlarının hastalıkları ve genel sağlık sorunlarını ele alır.")</span> </p>
 					</div>
 				</div>
-				<div class="col_1_of_bottom span_1_of_last">
+				<div class="col_1_of_bottom span_1_of_bottom">
 							<img src="images/pic3.jpg" style="width:104%;" alt="" />
 				     <div class="main_link">
 								<h5><span>@_localization.Getkey("Kardiyoloji")</span></h5>

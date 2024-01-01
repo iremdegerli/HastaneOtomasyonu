@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
 
 namespace HastaneOtomasyonu.Controllers
 {
@@ -10,14 +10,13 @@ namespace HastaneOtomasyonu.Controllers
 	[ApiController]
 	public class DoktorApiController : ControllerBase
 	{
-		private readonly HastaneCS hastaneCS; // Replace YourDbContext with your actual DbContext type
+		private readonly HastaneCS hastaneCS; 
 
 		public DoktorApiController(HastaneCS context)
 		{
 			hastaneCS = context;
 		}
 
-		// GET: api/<AircraftApiController>
 		[HttpGet]
 		public IActionResult Get()
 		{
@@ -25,7 +24,6 @@ namespace HastaneOtomasyonu.Controllers
 			return Ok(doktors);
 		}
 
-		// GET api/<AircraftApiController>/5
 		[HttpGet("{id}")]
 		public IActionResult Get(int id)
 		{
@@ -39,7 +37,6 @@ namespace HastaneOtomasyonu.Controllers
 			return Ok(doktor);
 		}
 
-		// POST api/<AircraftApiController>
 		[HttpPost]
 		public async Task<IActionResult> Post([FromBody] Doktorlar doktor)
 		{
@@ -56,7 +53,6 @@ namespace HastaneOtomasyonu.Controllers
 			}
 		}
 
-		// PUT api/<AircraftApiController>/5
 		[HttpPut("{id}")]
 		public async Task<IActionResult> Put(int id, [FromBody] Doktorlar updatedDoktorlar)
 		{
@@ -86,7 +82,6 @@ namespace HastaneOtomasyonu.Controllers
 			return NoContent();
 		}
 
-		// DELETE api/<AircraftApiController>/5
 		[HttpDelete("{id}")]
 		public async Task<IActionResult> Delete(int id)
 		{

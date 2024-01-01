@@ -44,7 +44,19 @@ namespace HastaneOtomasyonu.Controllers
 			var name = HttpContext.Session.GetString("username");
 			ViewBag.username = name;
 			return View();
-        }
+		}
+		public IActionResult PoliklinikG()
+		{
+			var name = HttpContext.Session.GetString("username");
+			ViewBag.username = name;
+			return View();
+		}
+		public IActionResult IletisimG()
+		{
+			var name = HttpContext.Session.GetString("username");
+			ViewBag.username = name;
+			return View();
+		}
 		public IActionResult Privacy()
         {
             return View();

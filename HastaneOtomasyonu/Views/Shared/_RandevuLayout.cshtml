@@ -74,12 +74,12 @@
 				<div class="header-bottom">
 					<div id="cssmenu">
 						<ul>
-							<li class="active">
+							<li class="last">
 								<a href="@Url.Action("IndexG", "Home")">
 									<span>ANASAYFA</span>
 								</a>
 							</li>
-							<li class="active"><a href="@Url.Action("Poliklinik", "Home")"><span>POLİKLİNİKLER</span></a></li>
+							<li class="last"><a href="@Url.Action("Poliklinik", "Home")"><span>POLİKLİNİKLER</span></a></li>
 							<li class="last"><a href="@Url.Action("Iletisim", "Home")"><span>BİZE ULAŞIN</span></a></li>
 						</ul>
 					</div>
@@ -89,106 +89,18 @@
 			</div>
 
 			<div class="main">
-			@* 	<div class="outer-box">
-					<div class="login-box">
-						<center>
-							<form action="Register" method="post" onsubmit="return validateForm()">
-								<input type="text" placeholder="İsim" asp-for="HastalarAd" id="hastaAdi">
-								<input type="text" placeholder="Soyisim" asp-for="HastalarSoyad" id="hastaSoyadi">
-								<input type="text" placeholder="Doktor Adı" asp-for="DoktorlarAd" id="doktorAdi">
-								<input type="text" placeholder="Şifre" asp-for="Password" id="Password">
-								<input type="password" placeholder="Şifre Onayla" asp-for="CPassword" id="CPassword">
-
-								<button type="submit" id="btn-login">Kayıt Ol</button>
-							</form>
-							<div id="error-message" style="color: floralwhite;"></div>
-						</center>
-					</div>
+				<div>
+					@RenderBody()
 				</div>
-
-				<script>
-					function validateForm() {
-						var hastaAdi = document.getElementById("HastalarAd").value;
-						var hastaSoyadi = document.getElementById("HastalarSoyad").value;
-						var doktorAdi = document.getElementById("DoktorlarAd").value;
-						var password = document.getElementById("Password").value;
-						var cpassword = document.getElementById("CPassword").value;
-
-						if (hastaAdi === "" || hastaSoyadi === "" || email === "" || password === "" || cpassword === "") {
-							document.getElementById("error-message").innerHTML = "Lütfen tüm alanları doldurun.";
-							return false;
-						}
-
-						if (password !== cpassword) {
-							document.getElementById("error-message").innerHTML = "Şifreler eşleşmiyor.";
-							return false;
-						}
-
-						return true;
-					}
-				</script> *@
-
-
+				<br />
 
 				<div class="footer">
-					<div class="footer-top">
-						<div class="col_1_of_4 span_1_of_4">
-							<h3>INFORMATION</h3>
-							<ul>
-								<li><a href="#">About us</a></li>
-								<li><a href="#">Sitemap</a></li>
-								<li><a href="#">Contact</a></li>
-								<li><a href="#">Terms and conditions</a></li>
-								<li><a href="#">Legal Notice</a></li>
-							</ul>
-						</div>
-						<div class="col_1_of_4 span_1_of_4">
-							<h3>CATEGORIES</h3>
-							<ul>
-								<li><a href="#">New products</a></li>
-								<li><a href="#">top sellers</a></li>
-								<li><a href="#">Specials</a></li>
-								<li><a href="#">Products</a></li>
-								<li><a href="#">Comments</a></li>
-							</ul>
-						</div>
-						<div class="col_1_of_4 span_1_of_4">
-							<h3>My ACCOUNT</h3>
-							<ul>
-								<li><a href="#">Your Account</a></li>
-								<li><a href="#">Personal info</a></li>
-								<li><a href="#">Prices</a></li>
-								<li><a href="#">Address</a></li>
-								<li><a href="#">Locations</a></li>
-							</ul>
-						</div>
-						<div class="col_1_of_4 span_1_of_4 footer-lastgrid">
-							<h3>BİZE ULAŞIN</h3>
-							<ul class="list3">
-								<li>
-									<img src="images/home.png" alt="" />
-									<div class="extra-wrap">
-										<p>Sakarya üniversitesi,<br>Bilgisayar ve Bilişim Bilimleri Fakültesi.</p>
-									</div>
-								</li>
-								<li>
-									<img src="images/phone.png" alt="" />
-									<div class="extra-wrap">
-										<p>+90 555 444 3232</p>
-									</div>
-								</li>
-							</ul>
-						</div>
-						<div class="clear"></div>
-					</div>
 					<div class="copy">
-						<p> © 2023 SAKARYA ÜNİVERSİTESİ | Design by İREM DEĞERLİ</a></p>
+						<p> © 2023 SAKARYA ÜNİVERSİTESİ | Design by İREM DEĞERLİ</p>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div>
-			@RenderBody()
-		</div>
+		
 </body>
 </html>
