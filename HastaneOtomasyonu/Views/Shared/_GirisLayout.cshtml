@@ -77,7 +77,6 @@
 					</style>
 
 					<div id="randevuAlButtonContainer">
-						<a id="randevuAlButton" href="@Url.Action("Randevu", "Randevu")">Randevu Al</a>
 						<a id="kayitOlButton" href="@Url.Action("Register", "Giris")">Kayıt Ol</a>
 					</div>
 					<div class="clear"></div>
@@ -163,7 +162,6 @@
 						var email = document.getElementById("Email").value;
 						var password = document.getElementById("Password").value;
 
-						// Sadece e-posta alanını kontrol etmek için basit bir örnek
 						if (email === "") {
 							document.getElementById("email-error").innerHTML = "E-posta alanını doldurun.";
 							return false;
@@ -171,7 +169,6 @@
 							document.getElementById("email-error").innerHTML = "";
 						}
 
-						// Şifre alanını kontrol etmek için basit bir örnek
 						if (password === "") {
 							document.getElementById("password-error").innerHTML = "Şifre alanını doldurun.";
 							return false;
@@ -179,9 +176,14 @@
 							document.getElementById("password-error").innerHTML = "";
 						}
 
-						// Burada giriş başarısız olduğunu farz edelim, gerçek uygulamada bu sunucu tarafından kontrol edilecektir.
-						document.getElementById("login-error").innerHTML = "Giriş başarısız. Lütfen bilgilerinizi kontrol edin.";
-						return true;
+						if {
+							document.getElementById("login-error").innerHTML = "Giriş başarısız. Lütfen bilgilerinizi kontrol edin.";
+							return false;
+						}
+						else {
+							document.getElementById("login-error").innerHTML = "";
+							return false;
+						}
 					}
 				</script>
 

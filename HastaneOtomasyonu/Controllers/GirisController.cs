@@ -54,17 +54,50 @@ namespace HastaneOtomasyonu.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(KullaniciHesap ekleKullanici)
+        public async Task<IActionResult>  Login(KullaniciHesap ekleKullanici)
         {
-            var check = hastaneCS.KullaniciHesaplar.FirstOrDefault(x => x.Email == ekleKullanici.Email && x.Password == ekleKullanici.Password);
-
+            var check = hastaneCS.KullaniciHesaplar.Where(x => x.Email == ekleKullanici.Email && x.Password == ekleKullanici.Password).FirstOrDefault();
             if (check != null)
             {
-                return RedirectToAction("IndexG", "Home");
-            }
+                if (check.Email.ToLower() == "b211210038@ogr.sakarya.edu.tr")
+                {
+                    check.Role = "Admin";
+                }
+                else
+                {
+                    check.Role = "Ui";
+                }
+                var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name, check.FirstName + " " + check.LastName),
+                    new Claim(ClaimTypes.Role, "Ui"),
+                    new Claim(ClaimTypes.Role, "Admin"),
 
+                };
+
+                var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                var authProperties = new AuthenticationProperties();
+
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
+                new ClaimsPrincipal(claimsIdentity), authProperties);
+
+                HttpContext.Session.SetString("username", check.FirstName + " " + check.LastName);
+                var name = HttpContext.Session.GetString("username");
+                ViewBag.username = name;
+
+                if (check.Role == "Ui")
+                {
+                    return RedirectToAction("IndexG", "Home");
+                }
+                else if (check.Role == "Admin")
+                {
+                    return RedirectToAction("Index", "Admin");
+                }
+            }
             ViewBag.error = "Kayıtlı kullanıcı bulunamadı!";
             return View();
+
         }
-    }
-}
+
+		}
+	}

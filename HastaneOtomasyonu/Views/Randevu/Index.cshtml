@@ -1,0 +1,38 @@
+﻿@model HastaneOtomasyonu.Models.Randevu
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_RandevuLayout.cshtml";
+}
+
+<form action="/Randevu/Index" method="post">
+    <div class="form-group">
+        <label for="firstName">Hasta TC</label>
+        <input type="number" asp-for="Tc" required>
+    </div>
+
+    <div class="form-group">
+        <label>Hasta Ad</label>
+        <input type="text" asp-for="HastalarAd" required>
+    </div>
+    <div class="form-group">
+        <label>Hasta Soyad</label>
+        <input type="text" asp-for="HastalarSoyad" required>
+    </div>
+    <div class="form-group">
+        <label>Doktor Ad</label>
+        <input type="text" asp-for="DoktorlarAd" required>
+    </div>
+    <div class="form-group">
+        <label>Doktor Soyad</label>
+        <input type="text" asp-for="DoktorlarSoyad" required>
+    </div>
+    <div class="form-group">
+        <label>Randevu Tarihi</label>
+        <input type="date" asp-for="RandevuTarih" required>
+    </div>
+    <div class="form-group">
+        <label>Randevu Saati</label>
+        <input type="time" asp-for="RandevuSaati" required>
+    </div>
+    <button id="btn-register">Randevu Oluştur</button>
+</form>

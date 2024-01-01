@@ -11,19 +11,16 @@ namespace HastaneOtomasyonu.Models
 
 		public int Tc { get; set; }
 
-		[Required(ErrorMessage = "Hasta ismi boş olamaz")]
+
 		[Display(Name = "Hastaİsmi")]
 		public string? HastalarAd { get; set; }
 
-		[Required(ErrorMessage = "Hasta soyismi boş olamaz")]
 		[Display(Name = "HastaSoyadı")]
 		public string? HastalarSoyad { get; set; }
 
-		[Required(ErrorMessage = "Doktor ismi boş olamaz")]
 		[Display(Name = "Doktorİsmi")]
 		public string? DoktorlarAd { get; set; }
 
-		[Required(ErrorMessage = "Doktor soyadı boş olamaz")]
 		[Display(Name = "DoktorSoyad")]
 		public string? DoktorlarSoyad { get; set; }
 
@@ -33,6 +30,6 @@ namespace HastaneOtomasyonu.Models
         public DateTime? RandevuTarih { get; set; }
 
 		[RegularExpression(@"^[0-9]{2}:[0-9]{2}$", ErrorMessage = "Invalid time format")]
-		public DateTime? randevuSaati { get; set; }
+		public DateTime? RandevuSaati { get; set; }
     }
 }

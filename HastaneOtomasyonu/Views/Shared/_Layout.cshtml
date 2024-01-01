@@ -75,9 +75,9 @@
 					</style>
 
 					<div id="randevuAlButtonContainer">
-						<a id="girisYapButton" href="@Url.Action("Login", "Giris")">Giriş Yap</a>
-						<a id="randevuAlButton" href="@Url.Action("Randevu", "Randevu")">Randevu Al</a>
-						<a id="kayitOlButton" href="@Url.Action("Register", "Giris")">Kayıt Ol</a>
+						<a id="girisYapButton" href="@Url.Action("Login", "Giris")"><span>@_localization.Getkey("Giriş Yap")</span></a>
+						<a id="randevuAlButton" href="@Url.Action("Index", "Randevu")"><span>@_localization.Getkey("Randevu Al")</span></a>
+						<a id="kayitOlButton" href="@Url.Action("Register", "Giris")"><span>@_localization.Getkey("Kayıt Ol")</span></a>
                     </div>
 			<div class="clear"></div> 
 		</div>
@@ -86,12 +86,22 @@
 				<ul>
 				   <li class="active">
 					   <a href="@Url.Action("Index", "Home")">
-						   <span>ANASAYFA</span></a>
+						   <span>@_localization.Getkey("ANASAYFA")</span></a>
 					</li>
-					<li class="has-sub"><a href="@Url.Action("Poliklinik", "Home")"><span>POLİKLİNİKLER</span></a></li>
-							<li class="last"><a href="@Url.Action("Iletisim","Home")"><span>BİZE ULAŞIN</span></a></li>
+							<li class="has-sub"><a href="@Url.Action("Poliklinik", "Home")"><span>@_localization.Getkey("POLİKLİNİKLER")</span></a></a></li>
+							<li class="last"><a href="@Url.Action("Iletisim","Home")"><span>@_localization.Getkey("BİZE ULAŞIN")</span></a></a></li>
 				</ul>
 			</div>
+					<div>
+						<ul>
+							<li>
+								<a asp-controller="Home" asp-action="Changelanguage" asp-route-culture="en-US"><i class="flag-icon flag-icon-gb"></i>En</a>
+							</li>
+							<li>
+								<a asp-controller="Home" asp-action="Changelanguage" asp-route-culture="tr-TR"><i class="flag-icon flag-icon-gb"></i>Tr</a>
+							</li>
+						</ul>
+					</div>
 
 			<div class="clear"></div> 
 		</div>
@@ -112,24 +122,23 @@
 				<div>
 					<div class="title-img">
 						<div class="title"><img src="images/h1.png" style="width:25%;" alt=""></div>
-							<div class="title-desc"><p>Diamond Hastanesi</p></div>
+							<div class="title-desc"><p><span>@_localization.Getkey("Diamond Hastanesi")</span></p></div>
 							<div class="clear"></div> 
 					</div>
-					<h4 class=head>Vizyonumuz</h4>
+						<h4 class=head><span>@_localization.Getkey("VİZYONUMUZ")</span></h4>
 						<p>
-							Diamond Hastanesi, sağlık sektöründe mükemmeliyeti benimseyen ve toplumun sağlığını güçlendirmeyi amaçlayan bir vizyona sahiptir. Modern tıbbi teknolojileri kullanarak, hasta odaklı bir yaklaşım benimseyerek, etik değerlere bağlı kalarak, her geçen gün daha iyi bir sağlık hizmeti sunmayı hedeflemektedir.
+							<span>@_localization.Getkey("Diamond Hastanesi, sağlık sektöründe mükemmeliyeti benimseyen ve toplumun sağlığını güçlendirmeyi amaçlayan bir vizyona sahiptir. Modern tıbbi teknolojileri kullanarak, hasta odaklı bir yaklaşım benimseyerek, etik değerlere bağlı kalarak, her geçen gün daha iyi bir sağlık hizmeti sunmayı hedeflemektedir.")</span>
 						</p>
 					<hr>
-					<h4 class=head>Misyonumuz</h4>
+						<h4 class=head><span>@_localization.Getkey("MISYONUMUZ")</span></h4>
 						<p>
-							Diamond Hastanesi, hastalarına uzman bir sağlık hizmeti sunmayı, sürekli eğitim ve gelişimle kalite standartlarını yükseltmeyi ve toplum sağlığını iyileştirmeyi misyon edinmiştir. Hasta memnuniyetini en üst düzeye çıkarmak, güvenilir ve etik bir anlayışla tedavi sunmak, yenilikçi çözümler geliştirmek ve toplumsal sorumluluk bilinciyle hareket etmek Diamond Hastanesi'nin temel misyonunu oluşturmaktadır.
+							<span>@_localization.Getkey("Diamond Hastanesi, hastalarına uzman bir sağlık hizmeti sunmayı, sürekli eğitim ve gelişimle kalite standartlarını yükseltmeyi ve toplum sağlığını iyileştirmeyi misyon edinmiştir. Hasta memnuniyetini en üst düzeye çıkarmak, güvenilir ve etik bir anlayışla tedavi sunmak, yenilikçi çözümler geliştirmek ve toplumsal sorumluluk bilinciyle hareket etmek Diamond Hastanesi'nin temel misyonunu oluşturmaktadır.")</span>
 						</p>
 					<hr>
-					<h4 class=head>Hizmetler</h4>
+						<h4 class=head><span>@_localization.Getkey("HIZMETLER")</span></h4>
 						<p>
-							Diamond Hastanesi, geniş bir sağlık hizmetleri yelpazesi sunarak hastalarına kapsamlı bir tedavi imkanı sağlar. Bu hizmetler arasında genel cerrahi, iç hastalıkları, kadın doğum, çocuk sağlığı, radyoloji, laboratuvar hizmetleri, acil servis ve daha birçok branş bulunmaktadır. Teknolojik altyapısı ve uzman kadrosuyla hastalarına modern, güvenilir ve etkili sağlık hizmetleri sunmaktadır.
-							<br>
-							Diamond Hastanesi, hasta odaklı yaklaşımıyla ve kaliteli sağlık hizmetleriyle tanınan bir kurum olmayı amaçlamaktadır. Hastalarına güvenli, etik değerlere uygun ve bilimsel temellere dayalı bir tedavi sunarak toplumun sağlık standartlarını yükseltmeye katkıda bulunmayı hedeflemektedir.
+							<span>
+								@_localization.Getkey("Diamond Hastanesi, geniş bir sağlık hizmetleri yelpazesi sunarak hastalarına kapsamlı bir tedavi imkanı sağlar. Bu hizmetler arasında genel cerrahi, iç hastalıkları, kadın doğum, çocuk sağlığı, radyoloji, laboratuvar hizmetleri, acil servis ve daha birçok branş bulunmaktadır. Teknolojik altyapısı ve uzman kadrosuyla hastalarına modern, güvenilir ve etkili sağlık hizmetleri sunmaktadır. Diamond Hastanesi, hasta odaklı yaklaşımıyla ve kaliteli sağlık hizmetleriyle tanınan bir kurum olmayı amaçlamaktadır.Hastalarına güvenli, etik değerlere uygun ve bilimsel temellere dayalı bir tedavi sunarak toplumun sağlık standartlarını yükseltmeye katkıda bulunmayı hedeflemektedir.")</span>
 						</p>
 					<hr>
 				</div>
@@ -137,29 +146,29 @@
 				<div class="clear"></div>
 		<div class="title-img">
 						<div class="title"><img src="images/h2.png" style="width:25%;" alt=""></div>
-						<div class="title-desc"><p>POLİKLİNİKLER</p></div>
+						<div class="title-desc"><span>@_localization.Getkey("POLİKLİNİKLER")</span></div>
 						<div class="clear"></div>
 		</div>
 		<div class="content-bottom">
 			<div class="col_1_of_bottom span_1_of_bottom">
 							<img src="images/pic.jpg" style="width:100%;" alt="" />
 				<div class="main_link">
-						<h5>Genel Cerrahi</h5>
-							<p> Genel cerrahi, vücuttaki çeşitli organlarda ortaya çıkabilen geniş bir yelpazedeki sorunları ele alır.</p>
+								<h5><span>@_localization.Getkey("Genel Cerrahi")</span></h5>
+								<p> <span>@_localization.Getkey("Genel cerrahi, vücuttaki çeşitli organlarda ortaya çıkabilen geniş bir yelpazedeki sorunları ele alır.")</span></p>
 				</div>
 			</div>
 				<div class="col_1_of_bottom span_1_of_bottom">
 							<img src="images/pic1.jpg" style="width:94%;" alt="" />
 				     <div class="main_link">
-						<h5>Dahiliye</h5>
-								<p>Dahiliye, yetişkinlerin iç organlarının hastalıkları ve genel sağlık sorunlarını ele alır. </p>
+								<h5><span>@_localization.Getkey("Dahiliye")</span></h5>
+								<p><span>@_localization.Getkey("Dahiliye, yetişkinlerin iç organlarının hastalıkları ve genel sağlık sorunlarını ele alır.")</span> </p>
 					</div>
 				</div>
 				<div class="col_1_of_bottom span_1_of_last">
 							<img src="images/pic3.jpg" style="width:104%;" alt="" />
 				     <div class="main_link">
-						<h5>Kardiyoloji</h5>
-								<p>Kardiyoloji, kalp ve damar sistemindeki hastalıkları inceleyen, tanı koyan ve tedavi eden tıp dalıdır.</p>
+								<h5><span>@_localization.Getkey("Kardiyoloji")</span></h5>
+								<p><span>@_localization.Getkey("Kardiyoloji, kalp ve damar sistemindeki hastalıkları inceleyen, tanı koyan ve tedavi eden tıp dalıdır.")</span></p>
 					</div>
 				 </div>
 				

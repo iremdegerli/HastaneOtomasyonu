@@ -1,4 +1,7 @@
-﻿<!DOCTYPE HTML>
+﻿@model HastaneOtomasyonu.Models.Randevu
+
+
+<!DOCTYPE HTML>
 <html>
 <head>
 	<title>Diamond Hastanesi</title>
@@ -64,9 +67,7 @@
 					</style>
 
 					<div id="randevuAlButtonContainer">
-						<a id="girisYapButton" href="@Url.Action("Login", "Giris")">Giriş Yap</a>
-						<a id="randevuAlButton" href="@Url.Action("Randevu", "Randevu")">Randevu Al</a>
-						<a id="kayitOlButton" href="@Url.Action("Register", "Giris")">Kayıt Ol</a>
+						<a id="girisYapButton" href="@Url.Action("Index", "Home")">Çıkış Yap</a>
 					</div>
 					<div class="clear"></div>
 				</div>
@@ -74,20 +75,12 @@
 					<div id="cssmenu">
 						<ul>
 							<li class="active">
-								<a href="@Url.Action("Index", "Home")">
+								<a href="@Url.Action("IndexG", "Home")">
 									<span>ANASAYFA</span>
 								</a>
 							</li>
-							<li><a href="about.html"><span>HASTANEMİZ</span></a></li>
-							<li class="has-sub">
-								<a href="services.html"><span>POLİKLİNİKLER</span></a>
-								<ul>
-									<li class="has-sub"><a href="services.html"><span>Service 1</span></a></li>
-									<li class="has-sub"><a href="services.html"><span>Service 2</span></a></li>
-								</ul>
-							</li>
-
-							<li class="last"><a href="contact.html"><span>İLETİŞİM BİLGİLERİ</span></a></li>
+							<li class="active"><a href="@Url.Action("Poliklinik", "Home")"><span>POLİKLİNİKLER</span></a></li>
+							<li class="last"><a href="@Url.Action("Iletisim", "Home")"><span>BİZE ULAŞIN</span></a></li>
 						</ul>
 					</div>
 
@@ -96,7 +89,44 @@
 			</div>
 
 			<div class="main">
+			@* 	<div class="outer-box">
+					<div class="login-box">
+						<center>
+							<form action="Register" method="post" onsubmit="return validateForm()">
+								<input type="text" placeholder="İsim" asp-for="HastalarAd" id="hastaAdi">
+								<input type="text" placeholder="Soyisim" asp-for="HastalarSoyad" id="hastaSoyadi">
+								<input type="text" placeholder="Doktor Adı" asp-for="DoktorlarAd" id="doktorAdi">
+								<input type="text" placeholder="Şifre" asp-for="Password" id="Password">
+								<input type="password" placeholder="Şifre Onayla" asp-for="CPassword" id="CPassword">
 
+								<button type="submit" id="btn-login">Kayıt Ol</button>
+							</form>
+							<div id="error-message" style="color: floralwhite;"></div>
+						</center>
+					</div>
+				</div>
+
+				<script>
+					function validateForm() {
+						var hastaAdi = document.getElementById("HastalarAd").value;
+						var hastaSoyadi = document.getElementById("HastalarSoyad").value;
+						var doktorAdi = document.getElementById("DoktorlarAd").value;
+						var password = document.getElementById("Password").value;
+						var cpassword = document.getElementById("CPassword").value;
+
+						if (hastaAdi === "" || hastaSoyadi === "" || email === "" || password === "" || cpassword === "") {
+							document.getElementById("error-message").innerHTML = "Lütfen tüm alanları doldurun.";
+							return false;
+						}
+
+						if (password !== cpassword) {
+							document.getElementById("error-message").innerHTML = "Şifreler eşleşmiyor.";
+							return false;
+						}
+
+						return true;
+					}
+				</script> *@
 
 
 

@@ -7,8 +7,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 namespace HastaneOtomasyonu.Controllers
 {
+	[Authorize(Roles ="Admin")]
 	public class AdminController : Controller 
 	{
 		private readonly HastaneCS hastaneCS;
@@ -98,11 +101,12 @@ namespace HastaneOtomasyonu.Controllers
 		{
 			var poliklinikler = await hastaneCS.Poliklinikler.ToListAsync();
 			return View(poliklinikler);
-		}
+        }
 
-		public IActionResult Randevu()
+		public async Task<IActionResult> Randevu()
 		{
-			return View();
+			var randevular = await hastaneCS.Randevular.ToListAsync();
+			return View(randevular);
 		}
 
 		[HttpGet]

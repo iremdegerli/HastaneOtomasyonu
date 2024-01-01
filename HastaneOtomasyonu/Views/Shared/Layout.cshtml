@@ -76,8 +76,17 @@
 					</style>
 
 					<div id="randevuAlButtonContainer">
-						<a id="randevuAlButton" href="@Url.Action("Randevu", "Randevu")">Randevu Al</a>
-						<a id="kayitOlButton" href="@Url.Action("Index", "Home")">Çıkış Yap</a>
+						<p style="color: black;">Hoş Geldiniz, <br /> @ViewBag.username</p>
+						@if (ViewBag.username != "")
+						{
+							<a id="kayitOlButton" href="@Url.Action("Index", "Home")">Çıkış Yap</a>
+						}
+						<script>
+							function redirectToHomePage(page) {
+								window.location.href = page;
+							}
+						</script>
+						<a id="randevuAlButton" href="@Url.Action("Index", "Randevu")">Randevu Al</a>
 					</div>
 					<div class="clear"></div>
 				</div>
