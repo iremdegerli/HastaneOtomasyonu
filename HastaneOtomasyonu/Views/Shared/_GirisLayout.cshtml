@@ -23,7 +23,7 @@
 			<div class="header">
 				<div class="header-top">
 					<div class="logo">
-						<a href="index.html"><img src="images/logo.png" style="width:25%;" alt="" /></a>
+						<a href="index.html"><img src="~/images/logo.png" style="width:25%;" alt="" /></a>
 					</div>
 					<style>
 						body {
@@ -141,18 +141,54 @@
 						color: #fff;
 					}
 				</style>
-
 				<div class="outer-box">
 					<div class="login-box">
 						<center>
-							<form action="Login" method="post">
-								<input type="email" placeholder="E-mail" asp-for="Email">
-								<input type="password" placeholder="Şifre" asp-for="Password">
-								<button id="btn-login">Giriş Yap</button>
+							<form action="Login" method="post" onsubmit="return validateLoginForm()">
+								<input type="email" placeholder="E-mail" asp-for="Email" id="Email">
+								<div id="email-error" style="color: floralwhite;"></div>
+
+								<input type="password" placeholder="Şifre" asp-for="Password" id="Password">
+								<div id="password-error" style="color: floralwhite;"></div>
+
+								<button type="submit" id="btn-login">Giriş Yap</button>
+								<div id="login-error" style="color: floralwhite;"></div>
 							</form>
 						</center>
 					</div>
 				</div>
+
+				<script>
+					function validateLoginForm() {
+						var email = document.getElementById("Email").value;
+						var password = document.getElementById("Password").value;
+
+						// Sadece e-posta alanını kontrol etmek için basit bir örnek
+						if (email === "") {
+							document.getElementById("email-error").innerHTML = "E-posta alanını doldurun.";
+							return false;
+						} else {
+							document.getElementById("email-error").innerHTML = "";
+						}
+
+						// Şifre alanını kontrol etmek için basit bir örnek
+						if (password === "") {
+							document.getElementById("password-error").innerHTML = "Şifre alanını doldurun.";
+							return false;
+						} else {
+							document.getElementById("password-error").innerHTML = "";
+						}
+
+						// Burada giriş başarısız olduğunu farz edelim, gerçek uygulamada bu sunucu tarafından kontrol edilecektir.
+						document.getElementById("login-error").innerHTML = "Giriş başarısız. Lütfen bilgilerinizi kontrol edin.";
+						return true;
+					}
+				</script>
+
+				
+
+				
+
 				<br />
 			</div>
 			<div class="footer">

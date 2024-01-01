@@ -23,7 +23,7 @@
 			<div class="header">
 				<div class="header-top">
 					<div class="logo">
-						<a href="index.html"><img src="images/logo.png" style="width:25%;" alt="" /></a>
+						<a href="index.html"><img src="~/images/logo.png" style="width:25%;" alt="" /></a>
 					</div>
 					<style>
 						body {
@@ -145,18 +145,42 @@
 				<div class="outer-box">
 					<div class="login-box">
 						<center>
-							<form action="Register" method="post">
-								<input type="text" placeholder="İsim" asp-for="FirstName">
-								<input type="text" placeholder="Soyisim" asp-for="LastName">
-								<input type="email" placeholder="E-mail" asp-for="Email">
-								<input type="password" placeholder="Şifre" asp-for="Password">
-								<input type="password" placeholder="Şifre Onayla" asp-for="CPassword">
+							<form action="Register" method="post" onsubmit="return validateForm()">
+								<input type="text" placeholder="İsim" asp-for="FirstName" id="FirstName">
+								<input type="text" placeholder="Soyisim" asp-for="LastName" id="LastName">
+								<input type="email" placeholder="E-mail" asp-for="Email" id="Email">
+								<input type="password" placeholder="Şifre" asp-for="Password" id="Password">
+								<input type="password" placeholder="Şifre Onayla" asp-for="CPassword" id="CPassword">
 
-								<button id="btn-login">Kayıt Ol</button>
+								<button type="submit" id="btn-login">Kayıt Ol</button>
 							</form>
+							<div id="error-message" style="color: floralwhite;"></div>
 						</center>
 					</div>
 				</div>
+
+				<script>
+					function validateForm() {
+						var firstName = document.getElementById("FirstName").value;
+						var lastName = document.getElementById("LastName").value;
+						var email = document.getElementById("Email").value;
+						var password = document.getElementById("Password").value;
+						var cpassword = document.getElementById("CPassword").value;
+
+						if (firstName === "" || lastName === "" || email === "" || password === "" || cpassword === "") {
+							document.getElementById("error-message").innerHTML = "Lütfen tüm alanları doldurun.";
+							return false;
+						}
+
+						if (password !== cpassword) {
+							document.getElementById("error-message").innerHTML = "Şifreler eşleşmiyor.";
+							return false;
+						}
+
+						return true;
+					}
+				</script>
+
 				<br />
 			</div>
 				<div class="footer">
